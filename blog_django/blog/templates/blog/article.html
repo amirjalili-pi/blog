@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block customization %}
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+{% endblock %}
+{% block content %}
+    <h3>{{ article.title }}</h3>
+    <small>{{ article.created|date:'F.j.Y.P' }}</small>
+    <br>
+    <small>{{ article.writer.username }}</small>
+        <hr>
+    <p>{{ article.body|safe }}</p>
+{% endblock %}
